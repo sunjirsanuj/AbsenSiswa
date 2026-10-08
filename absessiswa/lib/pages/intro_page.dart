@@ -1,4 +1,5 @@
 import 'package:absessiswa/pages/login_page.dart';
+import 'package:absessiswa/pages/signup_page.dart';
 import 'package:absessiswa/themes/colors.dart';
 import 'package:absessiswa/widgets/brand_logo.dart';
 import 'package:absessiswa/widgets/brand_name.dart';
@@ -37,7 +38,7 @@ class IntroPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                    MaterialPageRoute(builder: (context) => const SignupPage()),
                   );
                 },
                 child: Button(buttonContent: "Get Started", borderRadius: 30),

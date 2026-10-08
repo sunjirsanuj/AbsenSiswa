@@ -1,3 +1,5 @@
+import 'package:absessiswa/pages/home_page.dart';
+import 'package:absessiswa/pages/signup_page.dart';
 import 'package:absessiswa/themes/colors.dart';
 import 'package:absessiswa/widgets/brand_logo.dart';
 import 'package:absessiswa/widgets/brand_name.dart';
@@ -46,16 +48,26 @@ class _LoginPageState extends State<LoginPage> {
               hintText: "Email or Username",
               prefixIcon: Icons.person_2_outlined,
               isPassword: false,
+              controller: usernameController,
             ),
             const SizedBox(height: 8),
             CustomTextfield(
               hintText: "Password",
               prefixIcon: Icons.lock_outline_rounded,
               isPassword: true,
+              controller: passwordController,
             ),
             const SizedBox(height: 25),
 
-            Button(buttonContent: "Login", borderRadius: 20),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: Button(buttonContent: "Login", borderRadius: 20),
+            ),
             const SizedBox(height: 15),
             GestureDetector(
               onTap: () {},
@@ -110,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
+                        builder: (context) => const SignupPage(),
                       ),
                     );
                   },
