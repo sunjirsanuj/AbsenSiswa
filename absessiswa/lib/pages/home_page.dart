@@ -1,4 +1,5 @@
 import 'package:absessiswa/themes/colors.dart';
+import 'package:absessiswa/widgets/home_page_banner.dart';
 import 'package:absessiswa/widgets/profile_pic.dart';
 import 'package:flutter/material.dart';
 
@@ -49,8 +50,11 @@ class _HomePageState extends State<HomePage> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20, top: 8),
-            child: IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none_rounded,size: 30,)),
-          )
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications_none_rounded, size: 30),
+            ),
+          ),
         ],
       ),
       drawer: Drawer(
@@ -72,6 +76,15 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
             ),
           ],
+        ),
+      ),
+
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20, left: 25, right: 25),
+            child: Column(children: [HomePageBanner()]),
+          ),
         ),
       ),
     );
